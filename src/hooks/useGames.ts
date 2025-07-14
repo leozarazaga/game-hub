@@ -50,38 +50,3 @@ const useGames = () => {
 };
 
 export default useGames;
-
-//////////////////////////////////////////////////////////////////////////////////////////
-
-/* 
-const useGames = () => {
-  const [games, setGames] = useState<Game[]>([]);
-  const [error, setError] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
-
-  useEffect(() => {
-    const controller = new AbortController();
-
-    const fetchGames = async () => {
-      try {
-        setIsLoading(true);
-        const res = await apiClient.get<FetchGamesResponse>("/games", {
-          signal: controller.signal,
-        });
-        setGames(res.data.results);
-      } catch (err) {
-        if (axios.isCancel(err)) return;
-        setError((err as Error).message);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    fetchGames();
-
-    return () => controller.abort();
-  }, []);
-
-  return { games, error, isLoading };
-};
-*/
