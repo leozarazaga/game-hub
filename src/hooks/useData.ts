@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import apiClient from "../services/api-client";
-import { CanceledError } from "axios";
+import axios from "axios";
 
 interface FetchResponse<T> {
     count: number;
@@ -15,22 +15,26 @@ const useData = <T>(endpoint: string) => {
     useEffect(() => {
         const controller = new AbortController();
 
-        const fetchGenres = async () => {
+        const fetchData = async () => {
             try {
                 setIsLoading(true);
+                await new Promise((res) => setTimeout(res, 1000));
+
                 const res = await apiClient.get<FetchResponse<T>>(endpoint, {
                     signal: controller.signal,
                 });
+
                 setData(res.data.results);
             } catch (err) {
-                if (err instanceof CanceledError) return;
+                // if (err instanceof CanceledError) return;
+                if (axios.isCancel(err)) return;
                 setError((err as Error).message);
             } finally {
                 setIsLoading(false);
             }
         };
 
-        fetchGenres();
+        fetchData();
 
         return () => controller.abort();
     }, [endpoint]);
