@@ -4,11 +4,13 @@ import usePlatforms, { type Platform } from "../hooks/usePlatforms";
 
 interface PlatformSelectorProps {
     onSelectPlatform: (platform: Platform) => void;
-    selectedPlatform: Platform | null;
+    selectedPlatformId?: number;
 }
 
-const PlatformSelector: React.FC<PlatformSelectorProps> = ({ onSelectPlatform, selectedPlatform }) => {
+const PlatformSelector: React.FC<PlatformSelectorProps> = ({ onSelectPlatform, selectedPlatformId }) => {
     const { data, error, isLoading } = usePlatforms();
+
+    const selectedPlatform = data?.results.find((platform) => platform.id === selectedPlatformId);
 
     if (error) return null;
     if (isLoading) return <Spinner />;

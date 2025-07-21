@@ -4,18 +4,20 @@ import getCroppedImageUrl from "../services/image-url";
 
 interface GenreListProps {
     onSelectGenre: (genre: Genre) => void;
-    selectedGenre: Genre | null;
+    selectedGenreId?: number;
 }
 
-const GenreList: React.FC<GenreListProps> = ({ onSelectGenre, selectedGenre }) => {
-    const { data, isLoading, error } = useGenres()
+const GenreList: React.FC<GenreListProps> = ({ onSelectGenre, selectedGenreId }) => {
+    const { data, isLoading, error } = useGenres();
 
     if (error) return null;
     if (isLoading) return <Spinner />;
 
     return (
         <>
-            <Heading fontSize="2xl" marginBottom={3}>Genres</Heading>
+            <Heading fontSize="2xl" marginBottom={3}>
+                Genres
+            </Heading>
             <List>
                 {data?.results.map((genre) => (
                     <ListItem key={genre.id} paddingY="5px">
@@ -24,7 +26,7 @@ const GenreList: React.FC<GenreListProps> = ({ onSelectGenre, selectedGenre }) =
                             <Button
                                 whiteSpace="normal"
                                 textAlign="left"
-                                fontWeight={genre.id === selectedGenre?.id ? "bold" : "normal"}
+                                fontWeight={genre.id === selectedGenreId ? "bold" : "normal"}
                                 fontSize="lg"
                                 variant="link"
                                 onClick={() => onSelectGenre(genre)}
