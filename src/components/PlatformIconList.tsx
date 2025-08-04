@@ -4,14 +4,14 @@ import { SiNintendo } from "react-icons/si";
 import { BsGlobe } from "react-icons/bs";
 import { HStack, Icon } from "@chakra-ui/react";
 import type { IconType } from "react-icons";
-import type { Platform } from "../hooks/usePlatforms";
+import type { Platform } from "../entities/Platform";
 
 interface PlatformIconListProps {
     platforms: Platform[];
 }
 
 const PlatformIconList: React.FC<PlatformIconListProps> = ({ platforms }) => {
-    const iconMap: {[key: string]: IconType} = {
+    const iconMap: { [key: string]: IconType } = {
         pc: FaWindows,
         playstation: FaPlaystation,
         xbox: FaXbox,
@@ -26,7 +26,7 @@ const PlatformIconList: React.FC<PlatformIconListProps> = ({ platforms }) => {
     return (
         <HStack marginY={"10px"}>
             {platforms.map((platform) => (
-                <Icon key={platform.id} as={iconMap[platform.slug]} color="gray.500"/>
+                <Icon key={platform.id} as={iconMap[platform.slug]} color="gray.500" />
             ))}
         </HStack>
     );
