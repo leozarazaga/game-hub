@@ -6,10 +6,16 @@ export interface FetchResponse<T> {
     results: T[];
 }
 
+const API_KEY = import.meta.env.VITE_API_KEY;
+
+if (!API_KEY) {
+    throw new Error("VITE_API_KEY is not defined in your .env file");
+}
+
 const axiosInstance = axios.create({
     baseURL: "https://api.rawg.io/api",
     params: {
-        key: import.meta.env.VITE_API_KEY,
+        key: API_KEY,
     },
 });
 
