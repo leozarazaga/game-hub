@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import type { Trailer } from "../entities/Trailer";
+import type Trailer from "../entities/Trailer";
 import APIClient from "../services/api-client";
 
 const useTrailers = (gameId: number) => {
@@ -7,7 +7,7 @@ const useTrailers = (gameId: number) => {
 
     return useQuery({
         queryKey: ["trailers", gameId],
-        queryFn:  apiClient.getAll,
+        queryFn: apiClient.getAll,
     });
 };
 
