@@ -10,9 +10,11 @@
 
 ## Preview
 
-<picture>
-  <img src="./src/assets/game-hub-preview.gif" width="100%" alt="Game Hub Preview" />
-</picture>
+<video autoplay loop muted playsinline width="100%">
+  <source src="./src/assets/game-hub-preview.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
 
 ## Features
 
