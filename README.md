@@ -10,10 +10,7 @@
 
 ## Preview
 
-<video autoplay loop muted playsinline width="60%">
-  <source src="./src/assets/game-hub-preview.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+![Game Hub Preview](./src/assets/game-hub-preview.gif)
 
 <!-- **Live Demo :** [https://game-hub.netlify.app](https://game-hub.netlify.app) -->
 
