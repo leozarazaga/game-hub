@@ -1,20 +1,21 @@
 # Game Hub
+
 ![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Vite](https://img.shields.io/badge/Built%20With-Vite-646CFF?logo=vite&logoColor=FFD62E)
 ![React](https://img.shields.io/badge/React-19.x-61DAFB?logo=react)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178C6?logo=typescript)
 ![Code Style](https://img.shields.io/badge/Code%20Style-ESLint%20%2B%20Type%20Coverage-blue)
 
-
 **Game Hub** is a React + TypeScript web application inspired by [RAWG](https://rawg.io/). Users can browse and search for games using the RAWG Video Games Database API. The app includes game details, screenshots, filters, and a responsive UI.
 
 ## Preview
 
-<video autoplay loop muted playsinline width="100%">
+<video autoplay loop muted playsinline width="60%">
   <source src="./src/assets/game-hub-preview.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
+<!-- **Live Demo :** [https://game-hub.netlify.app](https://game-hub.netlify.app) -->
 
 ## Features
 
