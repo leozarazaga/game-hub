@@ -12,7 +12,7 @@
 
 ![Game Hub Preview](./src/assets/game-hub-preview.gif)
 
-<!-- **Live Demo :** [https://game-hub.netlify.app](https://game-hub.netlify.app) -->
+**Live Demo:** [game-hub-portal.netlify.app](https://game-hub-portal.netlify.app/)
 
 ## Features
 
